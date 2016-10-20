@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GET</title>
+</head>
+
+<body>
+   
+   {% if http_params %}
+   <table border="1">
+      <thead>
+         <tr><th>параметр</th><th>значение</th></tr>
+      </thead>
+      <tbody>
+         {% for name, params in http_params.items() %}
+            {% for param in params %}
+               <tr>
+                  <td>{{ name }}</td>
+                  <td>{{ param }}</td>
+               </tr>
+            {% endfor %}
+         {% endfor %}
+       </tbody>
+   </table>
+   {% else %}
+   <h2>No parameters!</h2>
+   {% endif %}
+
+</body>
+</html>
