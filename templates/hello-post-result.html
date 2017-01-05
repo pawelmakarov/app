@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Form</title>
+</head>
+<body>
+   {% if http_params %}
+   <table border="1">
+    <thead>
+      <tr><th>параметр</th><th>значение</th></tr>
+    </thead>
+    <tbody>
+      {% for name, params in http_params.items() %}
+         {% for param in params %}
+            <tr>
+               <td>{{ name }}</td>
+               <td>{{ param }}</td>
+            </tr>
+         {% endfor %}
+      {% endfor %}
+    </tbody>
+   </table>
+   {% endif %}
+
+   <h3><a href="http://localhost:8000/hello/post">Back</a></h3>
+
+</body>
+</html>
