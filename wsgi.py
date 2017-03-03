@@ -35,6 +35,7 @@ def application(environ, start_response):
 
 	content['http_params'] = OrderedDict(sorted(http_params.items()))
 	template = env.get_template(template)
+
 	return [template.render(content).encode('utf-8')]
 
 def set_cookies(environ, headers):
